@@ -14,8 +14,9 @@
 优点：框架本身提供（com.alibaba.dubbo.container.Main），可是现优雅关机（ShutdownHook）
 
 第三种方式具体步骤：
-1、在pom文件中配置打包
-<build>
+
+    1、pom.xml中配置打包操作
+    <build>
         <!--打包可执行jar-->
         <plugins>
             <plugin>
@@ -62,17 +63,19 @@
 
         <!-- 配置文件的打包操作 -->
         <resources>
-            <resource>
-                <targetPath>${project.build.directory}/classes</targetPath>
-                <directory>src/main/resources</directory>
-                <!-- 将 xml和properties文件都打包到build目录下的 classes目录下 -->
-                <filtering>true</filtering>
-                <includes>
-                    <include>**/*.xml</include>
-                    <include>**/*.properties</include>
-                </includes>
-            </resource>
+        <resource>
+            <targetPath>${project.build.directory}/classes</targetPath>
+            <directory>src/main/resources</directory>
+            <!-- 将 xml和properties文件都打包到build目录下的 classes目录下 -->
+            <filtering>true</filtering>
+            <includes>
+                <include>**/*.xml</include>
+                <include>**/*.properties</include>
+            </includes>
+        </resource>
         </resources>
     </build>
+    
     2、执行 mvn clean、 mvn install打成jar包，一般会生成在项目的target目录下
     3、执行java -jar xxx.jar启动服务即可
+    4、详情见源码
