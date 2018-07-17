@@ -8,10 +8,10 @@
 
 第二种方式：
 自己建立Main方法类运行，本demo中使用System.in.read()阻塞的方式防止服务自动关闭，可进行本地调使用。 
-缺点：Dobbo本省提供的高级特性没用上
+缺点：Dobbo本身提供的高级特性没用上
 
 第三种方式使用Dubbo框架提供的Main方法类来运行（Spring 容器） 建议使用 
-优点：框架本身提供（com.alibaba.dubbo.container.Main），可是现优雅关机（ShutdownHook）
+优点：框架本身提供（com.alibaba.dubbo.container.Main），可实现优雅关机（ShutdownHook）
 
 第三种方式具体步骤：
 
